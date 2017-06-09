@@ -1,0 +1,94 @@
+// label
+@import "label.placeholder";
+@import "validation.label";
+
+$label-validation-message-color: $color-character-disabled-light;
+$label-validation-message-error-color: $color-status-border-error;
+$label-message-transition: all 1s ease-in-out;
+
+.label-container {
+    &::before {
+        @extend %form-labels;
+        display: block;
+        visibility: hidden;
+        width: 0.1rem;
+        overflow: hidden;
+        color: transparent;
+        content: "*";
+    }
+}
+
+label,
+.label,
+.label-container {
+    // base
+    @extend %typography-dark-secondary;
+    // validation
+    @extend %validate-label;
+    position: relative;
+    width: 100%;
+
+    .label-text {
+        @extend %form-labels;
+    }
+
+    .label-message {
+        @extend %form-labels-validation;
+        display: block;
+        transition: $label-message-transition;
+        margin-top: 0;
+        width: inherit;
+        overflow: hidden;
+        color: $label-validation-message-error-color;
+
+        span {
+            display: initial;
+
+            &:not([aria-live="off"]) {
+                opacity: 1;
+                height: inherit;
+            }
+
+            &[aria-live="off"] {
+                position: absolute;
+                opacity: 0;
+                padding: 0;
+                height: 0;
+                overflow: hidden;
+            }
+        }
+
+        &.message {
+            display: inline-block;
+            position: absolute;
+            width: inherit;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: $label-validation-message-color;
+        }
+
+        &.inline-error {
+            display: inline-block;
+            position: absolute;
+            color: $label-validation-message-error-color;
+        }
+
+        &:not(.message) {
+            max-height: 0;
+        }
+    }
+}
+
+// hide all astrix at labels [use .no-required-sign at form element]
+.no-required-sign {
+    label,
+    .label,
+    .label-container {
+        &[data-required="true"] {
+            .label-text::after {
+                display: none;
+            }
+        }
+    }
+}

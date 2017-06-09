@@ -1,0 +1,14 @@
+// dialog
+
+// .dialog-title
+// .dialog-content
+// .dialog-section -> floated container. colored background.
+// .dialog-image   -> floated, no padding, colored background.
+// .dialog-actions -> Wrapper for the set of actions at the bottom of a dialog. Typically contains buttons.
+
+@import "dialog.placeholder";
+
+%dialog {
+    // base
+    @extend %dialog-containers;
+}

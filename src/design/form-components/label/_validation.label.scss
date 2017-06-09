@@ -1,0 +1,41 @@
+// validation label placeholder
+
+@import "../../variables/variables";
+
+$label-required-astrix: $color-status-border-error;
+$label-required-font-size: 1.8rem;
+$label-required-font-weight: 400;
+$label-required-left-margin: 0.2rem;
+
+%validate-required-label {
+    &[data-required="true"] {
+        .label-text {
+            &::after {
+                display: inline-block;
+                position: absolute;
+                margin-left: $label-required-left-margin;
+                color: $label-required-astrix;
+                font-size: $label-required-font-size;
+                font-weight: $label-required-font-weight;
+                content: "*";
+            }
+        }
+    }
+}
+
+%validate-invalid-error-message {
+    &[data-invalid="true"] {
+        .label-message {
+            &:not(.message) {
+                // used to animate the error message height
+                max-height: 20rem;
+            }
+        }
+    }
+}
+
+%validate-label {
+    // validation
+    @extend %validate-required-label;
+    @extend %validate-invalid-error-message;
+}

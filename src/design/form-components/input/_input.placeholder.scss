@@ -1,0 +1,109 @@
+// placeholder input
+@import "../../variables/variables";
+@import "../../placeholders/placeholders";
+
+$input-border-radius: $base-radius-card;
+$input-bgr-default: $color-status-background-default;
+$input-border-default: $color-status-border-default;
+$input-border-focus: $color-status-border-focus;
+$input-border-error: $color-status-border-error;
+$input-border-success: $color-status-border-success;
+$input-border-disabled: $color-status-border-disabled;
+$input-border-disabled-bgr: $color-status-border-disabled-light;
+$input-character-primary: $color-character-primary-light;
+$input-character-disabled: $color-character-disabled-light;
+$input-font-family: $typo-font-base-family;
+$input-font-size: $typo-font-base-size;
+$input-font-weight: $typo-font-base-weight;
+$input-error-color: $color-status-border-error;
+$input-error-font-size: 1.1rem;
+$input-error-font-weight: $typo-font-base-weight;
+$input-line-height: $typo-font-base-line-height;
+$input-padding: 0 0.8rem;
+$input-margin: 0;
+$input-height: 3.2rem;
+
+%input-disabled {
+    border: 1px solid $input-border-disabled;
+    background: none;
+    background-color: $input-border-disabled-bgr;
+    color: $input-character-disabled;
+}
+
+%input-readonly {
+    @extend %input-disabled;
+}
+
+%input-focus {
+    outline: 0;
+    border: 1px solid $input-border-focus;
+    background: none;
+    background-color: $input-bgr-default;
+    color: $input-character-primary;
+}
+
+// base input field style
+%input-base {
+    display: block;
+    order: inherit;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: $input-border-radius;
+    border-color: $input-border-default;
+    background: none;
+    background-color: $input-bgr-default;
+    padding: $input-padding;
+    width: inherit;
+    min-width: 0;
+    max-width: inherit;
+    height: $input-height;
+    color: $input-character-primary;
+    font-family: $input-font-family;
+    font-size: $input-font-size;
+    font-weight: $input-font-weight;
+
+    &:focus {
+        @extend %input-focus;
+    }
+
+    &[disabled],
+    &[disabled="disabled"] {
+        @extend %input-disabled;
+    }
+
+    &[readonly] {
+        @extend %input-readonly;
+    }
+
+    &[type="number"] {
+        -moz-appearance: textfield;
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            margin: $input-margin;
+
+            -webkit-appearance: none;
+            // sass-lint:disable no-important
+            -moz-appearance: textfield !important;
+        }
+    }
+
+    &[align="left"] {
+        text-align: center;
+    }
+
+    &[align="center"] {
+        text-align: center;
+    }
+
+    &[align="right"] {
+        text-align: right;
+    }
+
+    &[placeholder] {
+        color: $input-character-disabled;
+        font-family: $input-font-family;
+        font-size: $input-font-size;
+        font-weight: $input-font-weight;
+    }
+}

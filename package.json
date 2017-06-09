@@ -1,0 +1,49 @@
+{
+    "name": "bexio-design-development",
+    "license": "MIT",
+    "author": "bexio AG <npm@bexio.com> (https://www.bexio.com)",
+    "contributors": [
+        {
+            "name": "Robert Kiemele",
+            "email": "robert.kiemele@bexio.com"
+        },
+        {
+            "name": "Aleksandar Arsenovic",
+            "email": "aleksandar.arsenovic@bexio.com"
+        },
+        {
+            "name": "Dimitri Friedli",
+            "email": "dimitri.friedli@bexio.com"
+        },
+        {
+            "name": "Marco Petschen",
+            "email": "marco.petschen@bexio.com"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rokie83/design"
+    },
+    "scripts": {
+        "serve": "gulp develop",
+        "build": "gulp build",
+        "patch-release": "gulp release --type=patch",
+        "minor-release": "gulp release --type=minor",
+        "major-release": "gulp release --type=major",
+        "validate": "npm run scss-lint",
+        "scss-lint": "sass-lint -c -v --max-warnings 0"
+    },
+    "devDependencies": {
+        "del": "2.2.2",
+        "gulp": "3.9.1",
+        "gulp-autoprefixer": "4.0.0",
+        "gulp-bump": "2.7.0",
+        "gulp-conventional-changelog": "1.1.3",
+        "gulp-git": "2.3.0",
+        "gulp-sass": "3.1.0",
+        "gulp-shell": "0.6.3",
+        "gulp-webserver": "0.9.1",
+        "run-sequence": "1.2.2",
+        "sass-lint": "1.10.2"
+    }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@bexio/design",
+  "version": "0.0.6",
+  "description": "Bexio core scss components and design principles",
+  "author": "bexio AG <npm@bexio.com> (https://www.bexio.com)",
+  "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/rokie83/design"
+    },
+    "keywords": [
+        "bexio",
+        "design"
+    ]
+}

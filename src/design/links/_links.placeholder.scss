@@ -1,0 +1,32 @@
+@import "../variables/variables";
+
+%link-regular {
+    cursor: pointer;
+    text-decoration: none;
+    color: $color-secondary-blue-light;
+    font-size: 1.3rem;
+
+    &:hover {
+        color: $color-secondary-blue-light;
+
+        &:not([data-sort]) {
+            text-decoration: underline;
+        }
+    }
+
+    &:active {
+        color: $color-primary-blue-light;
+
+        &:not([data-sort]) {
+            text-decoration: underline;
+        }
+    }
+
+    &:focus {
+        outline: 0;
+
+        &:not([data-sort]) {
+            text-decoration: underline;
+        }
+    }
+}

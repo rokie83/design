@@ -1,0 +1,14 @@
+// hover mixin
+
+// button status
+$mixin-status-hover: 3%;
+$mixin-status-focus: 8%;
+$mixin-status-active: 3%;
+
+// todo: bx-4109 mixin for a elements
+// find a solution to handle link styles colors a different background colors
+
+@mixin mixin-status($status-color, $status-hover) {
+    // sass-lint:disable variable-for-property
+    color: darken($status-color, $status-hover);
+}

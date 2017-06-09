@@ -1,0 +1,86 @@
+// booking table
+@import "table.placeholder";
+
+$table-head-font-size: 13px;
+$table-head-font-weight: $typo-font-base-strong-weight;
+
+$table-body-item-updated: $table-row-updated;
+$table-body-item-hover: $color-table-hover;
+
+.bx-table {
+    @extend %table;
+
+    tr {
+
+        th,
+        td {
+            &:first-child {
+                padding-right: 0;
+                padding-left: $table-first-left-padding;
+                width: 18px;
+            }
+
+            &:last-child {
+                padding-right: $table-last-right-padding;
+                text-align: right;
+            }
+        }
+    }
+
+    thead {
+        tr {
+            th,
+            td {
+                padding-top: 0;
+                padding-bottom: $table-thead-bottom;
+                font-size: $table-head-font-size;
+                font-weight: $table-head-font-weight;
+
+                a {
+                    @extend %btn-filter-list-sorting;
+                }
+
+                span {
+                    @extend %table-head-column;
+                }
+            }
+        }
+    }
+
+    // table with hover
+
+    &.table-hover {
+        > tbody > tr {
+            &:hover,
+            &:focus {
+                cursor: pointer;
+
+                > th,
+                > td {
+                    background-color: $table-body-item-hover;
+                }
+            }
+
+            &:focus {
+                outline: 0;
+            }
+
+            &:active {
+                > th,
+                > td {
+                    animation: table-active-row 0.5s;
+                }
+            }
+        }
+    }
+
+    // align table content center
+    &.centered td,
+    &.centered th {
+        vertical-align: inherit;
+    }
+
+    &.centered th {
+        padding-top: 16px;
+    }
+}

@@ -1,0 +1,25 @@
+@import "../../variables/variables";
+@import "../../placeholders/typography.placeholder";
+
+// placeholder label
+
+$label-message-error-color: $color-status-border-error;
+$label-message-error-font-size: 1.1rem;
+$label-message-error-font-weight: $typo-font-base-weight;
+$label-message-line-height: $typo-font-base-line-height;
+
+%error-message {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: $label-message-line-height;
+    color: $label-message-error-color;
+    font-size: $label-message-error-font-size;
+    font-weight: $label-message-error-font-weight;
+
+    .md-input-message-animation {
+        line-height: $label-message-line-height;
+        color: $label-message-error-color;
+        font-size: $label-message-error-font-size;
+        font-weight: $label-message-error-font-weight;
+    }
+}

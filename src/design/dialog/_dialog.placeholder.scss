@@ -1,0 +1,115 @@
+@import "../variables/variables";
+@import "../placeholders/typography.placeholder";
+// placeholder dialog
+
+$dialog-padding: 0;
+$dialog-font-size: $typo-font-base-size;
+$dialog-font-weight: $typo-font-base-weight;
+$dialog-font-line-height: 1.5;
+$dialog-font-title-size: $typo-font-size-subheading;
+$dialog-base-h-padding: $base-padding;
+$dialog-base-v-padding: $base-padding - 0.8rem;
+$dialog-base-padding: $dialog-base-v-padding $dialog-base-h-padding;
+$dialog-base-minus-margin: -$base-padding;
+$dialog-base-margin: 0 $dialog-base-minus-margin;
+$dialog-hr: 1px solid $color-hr;
+$dialog-radius: $base-radius-card;
+$dialog-max-height: 80vh;
+
+%dialog-base {
+    display: block;
+    margin: $dialog-base-margin;
+    padding: $dialog-base-padding;
+    line-height: $dialog-font-line-height;
+    font-size: $dialog-font-size;
+    font-weight: $dialog-font-weight;
+
+    &[align="left"] {
+        text-align: left;
+    }
+
+    &[align="center"] {
+        text-align: center;
+    }
+
+    &[align="right"] {
+        text-align: right;
+    }
+}
+
+%dialog-title {
+    @extend %dialog-base;
+    border-bottom: $dialog-hr;
+    font-size: $dialog-font-title-size;
+}
+
+%dialog-content {
+    @extend %dialog-base;
+    padding-bottom: 0;
+}
+
+// floating content, able to colorize
+%dialog-section {
+    @extend %dialog-base;
+}
+
+// floating content, no padding, able to colorize
+%dialog-image {
+    @extend %dialog-base;
+    padding: $dialog-padding;
+    text-align: center;
+}
+
+// Wrapper for the set of actions at the bottom of a dialog. Typically contains buttons
+%dialog-actions {
+    @extend %dialog-base;
+    border-top: $dialog-hr;
+
+    .grid.grid-flex > .cell,
+    .grid.grid-gap.grid-flex > .cell,
+    .grid.grid-gap > .cell,
+    .grid > .cell .grid .cell {
+        padding-bottom: 0;
+    }
+}
+
+// containers
+%dialog-containers {
+    display: block;
+    max-height: $dialog-max-height;
+
+    .dialog-title {
+        @extend %dialog-title;
+    }
+
+    .dialog-content {
+        @extend %dialog-content;
+    }
+
+    .dialog-section {
+        @extend %dialog-section;
+    }
+
+    .dialog-image {
+        @extend %dialog-image;
+    }
+
+    .dialog-actions {
+        @extend %dialog-actions;
+    }
+
+    [class^="dialog-"]:first-child {
+        margin-top: -$dialog-base-h-padding;
+        border-radius: $dialog-radius $dialog-radius 0 0;
+    }
+
+    [class^="dialog-"]:last-child {
+        margin-bottom: -$dialog-base-v-padding;
+        border-radius: 0 0 $dialog-radius $dialog-radius;
+
+        &.dialog-image,
+        &.dialog-section {
+            margin-bottom: -$dialog-base-h-padding;
+        }
+    }
+}

@@ -1,0 +1,167 @@
+@import "../variables/color";
+@import "../placeholders/typography.placeholder";
+// variables
+$table-padding: 8px;
+$table-margin: 0;
+$table-first-left-padding: 20px;
+$table-last-right-padding: 24px;
+$table-hr: $color-table-border;
+$table-empty-bgr: $color-empty-table-list-bgr;
+$table-row-hover: $color-table-hover;
+$table-row-active: $color-table-active;
+$table-thead-bottom: 16px;
+$table-text-primary: $color-character-primary-light;
+$table-text-secondary: $color-character-secondary-light;
+$table-text-disabled: $color-character-disabled-light;
+$table-font-size: $typo-font-base-size;
+$table-font-weight: $typo-font-base-weight;
+$table-row-active-start: rgba(0, 160, 223, 0.36);
+$table-row-active-end: rgba(0, 160, 223, 0.23);
+$table-row-updated: rgba(220, 167, 31, 0.26);
+$table-row-transparent: transparent;
+$progress-table-sort-spinner-width: 14px;
+$progress-table-sort-spinner-color: $color-secondary-blue-light;
+
+// progress loading state [table] - list sort
+%loading-table-head {
+    // sass-lint:disable no-important
+    display: inline-block !important;
+    position: absolute;
+    margin-top: 2px;
+    margin-left: 5px;
+    width: $progress-table-sort-spinner-width;
+    height: $progress-table-sort-spinner-width;
+    overflow: visible;
+
+    svg {
+        shape-rendering: geometricPrecision;
+    }
+
+    path {
+        stroke-width: 1.6rem !important;
+        stroke: $progress-table-sort-spinner-color;
+    }
+}
+
+%loading-table-head-hidden {
+    display: none !important;
+}
+
+%table-head-column {
+    display: block;
+    color: $table-text-secondary;
+    font-size: $table-font-size;
+    font-weight: $table-font-weight;
+}
+
+%table {
+    margin: $table-margin;
+    background: none;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+
+    tr {
+        th,
+        td {
+            color: $table-text-primary;
+        }
+    }
+
+    th,
+    td {
+        border-bottom: 1px solid $table-hr;
+        padding: $table-padding;
+        vertical-align: top;
+        text-align: left;
+        font-size: $table-font-size;
+        font-weight: $table-font-weight;
+
+        p {
+            &:not(:last-child) {
+                margin-bottom: 4px;
+            }
+        }
+    }
+
+    .link {
+        cursor: pointer;
+
+        &:hover {
+            th,
+            td,
+            .th,
+            .td {
+                background-color: $table-row-hover;
+            }
+        }
+    }
+}
+
+%btn-filter-list-sorting {
+    @extend %table-head-column;
+    outline: none;
+    cursor: pointer;
+
+    .title {
+        display: inline-block;
+    }
+
+    // sass-lint:disable no-qualifying-elements
+    i.fa {
+        display: none;
+    }
+
+    &:hover,
+    &.active {
+        color: $table-text-primary;
+    }
+
+    &[data-sort="asc"] {
+        .fa-caret-up {
+            display: inline-block;
+            margin-left: 4px;
+        }
+    }
+
+    &[data-sort="desc"] {
+        .fa-caret-down {
+            display: inline-block;
+            margin-left: 4px;
+        }
+    }
+
+    &[data-sort="loading"] {
+        .mat-progress-spinner {
+            @extend %loading-table-head;
+        }
+    }
+
+    .mat-progress-spinner {
+        @extend %loading-table-head-hidden;
+    }
+}
+
+@keyframes table-update-row {
+    0% {
+        background-color: $table-row-transparent;
+    }
+
+    35% {
+        background-color: $table-row-updated;
+    }
+
+    100% {
+        background-color: $table-row-transparent;
+    }
+}
+
+@keyframes table-active-row {
+    0% {
+        background-color: $table-row-active-start;
+    }
+
+    100% {
+        background-color: $table-row-active-end;
+    }
+}

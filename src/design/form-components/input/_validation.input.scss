@@ -1,0 +1,41 @@
+// validation input
+@import "../../variables/variables";
+@import "input.placeholder";
+
+%validate-invalid-input {
+    border: 1px solid $input-border-error;
+    background-color: $color-status-background-default;
+    color: $input-character-primary;
+}
+
+%validate-invalid-input-focus {
+    &:focus {
+        @extend %input-focus;
+    }
+}
+
+%validate-invalid-input-base {
+    &[aria-invalid="true"] {
+        @extend %validate-invalid-input;
+        @extend %validate-invalid-input-focus;
+    }
+}
+
+%validate-disabled-input {
+    &[aria-disabled="true"] {
+        @extend %input-disabled;
+    }
+}
+
+%validate-readonly-input {
+    &[aria-readonly="true"] {
+        @extend %input-readonly;
+    }
+}
+
+// validation
+%validate-input {
+    @extend %validate-invalid-input-base;
+    @extend %validate-disabled-input;
+    @extend %validate-readonly-input;
+}

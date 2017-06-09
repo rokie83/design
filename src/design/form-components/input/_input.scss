@@ -1,0 +1,12 @@
+//input
+
+@import "input.placeholder";
+@import "validation.input";
+
+mat-input,
+input {
+    // base
+    @extend %input-base;
+    // validation
+    @extend %validate-input;
+}

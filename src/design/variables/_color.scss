@@ -1,0 +1,96 @@
+// Global color variables used at Bexio
+
+// Bexio brand colors
+$color-primary-green-light: #bbdc00;
+$color-primary-green-dark: #66b245;
+$color-primary-blue-light: #0b4859;
+$color-primary-blue-dark: #0d2f3b;
+$color-secondary-blue-light: #00a1df;
+$color-secondary-blue-dark: #0085b8;
+
+// Bexio white & gray colors
+$color-typ-special: #ffffff;
+$color-card: #fdfdfd;
+$color-canvas: #f5f5f5;
+$color-intermediate: #f1f2f1;
+$color-card-container: #ecedeb;
+$color-card-message: rgba(0, 0, 0, 0.06);
+
+//
+//
+// characters
+
+// theme opacity
+$color-opacity-primary: 0.87;
+$color-opacity-secondary: 0.54;
+$color-opacity-disabled: 0.26;
+
+// light theme text
+$color-character-primary-light: rgba(0, 0, 0, $color-opacity-primary);
+$color-character-secondary-light: rgba(0, 0, 0, $color-opacity-secondary);
+$color-character-disabled-light: rgba(0, 0, 0, $color-opacity-disabled);
+
+// dark theme text
+$color-character-primary-dark: rgba(255, 255, 255, $color-opacity-primary);
+$color-character-secondary-dark: rgba(255, 255, 255, $color-opacity-secondary);
+$color-character-disabled-dark: rgba(255, 255, 255, $color-opacity-disabled);
+
+//
+//
+// elements
+
+$color-hr: rgba(121, 132, 102, 0.14);
+
+// tables
+$color-empty-table-list-bgr: #efefef;
+$color-table-hover: rgba(0, 0, 0, 0.05);
+$color-table-active: rgba(251, 255, 0, 0.15);
+$color-table-border: rgba(121, 133, 102, 0.10);
+
+// progress
+$color-progress: #0099cc;
+
+//
+//
+// buttons
+
+// button base
+$color-button-bgr: #ffffff;
+$color-button-text: $color-character-primary-light;
+$color-button-bgr-disabled: rgba(0, 0, 0, 0.1);
+$color-button-text-disabled: rgba(0, 0, 0, 0.26);
+// button status
+$color-button-primary-bgr: #00a1df;
+$color-button-primary-color: $color-character-primary-dark;
+$color-button-secondary-bgr: #fafafa;
+$color-button-secondary-color: $color-character-primary-light;
+$color-button-special-bgr: #66b245;
+$color-button-special-color: $color-character-primary-dark;
+$color-button-inverse-bgr: $color-character-primary-light;
+$color-button-inverse-color: $color-character-primary-dark;
+$color-button-trans-bgr: transparent;
+$color-button-trans-color: $color-character-secondary-light;
+// button icon
+$color-button-icon-bgr: transparent;
+$color-button-icon-bgr-hover: rgba(0, 0, 0, 0.1);
+$color-button-icon-disabled: rgba(0, 0, 0, 0.12);
+
+//
+//
+// forms
+
+// form status:
+$color-status-background-default: rgb(255, 255, 255);
+$color-status-border-default: rgba(0, 0, 0, 0.26);
+$color-status-border-focus: $color-secondary-blue-light;
+$color-status-border-error: #c81919;
+$color-status-border-success: $color-primary-green-dark;
+$color-status-border-disabled: rgba(0, 0, 0, 0.1);
+$color-status-border-disabled-light: #eaeaea;
+
+// select
+$color-select-menu-active: rgba(0, 0, 0, 0.12);
+
+// radio
+$color-radio-ripple: rgba(0, 161, 223, 0.12);
+$color-radio-ripple-disabled: rgba(0, 0, 0, 0.12);

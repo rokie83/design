@@ -1,0 +1,17 @@
+// helper classes
+
+%hidden {
+    display: none;
+}
+
+.hidden {
+    @extend %hidden;
+}
+
+%noselect {
+    user-select: none;
+}
+
+.noselect {
+    @extend %noselect;
+}
