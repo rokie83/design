@@ -1,6 +1,6 @@
 # Bexio Design-Development
 
-This repository delivers an environment to develop the [@bexio/flexgrid](https://www.npmjs.com/package/@bexio/flexgrid) npm package. It is part of a code library for the [Bexio](http://www.bexio.com) company.
+This repository delivers an environment to develop the [@bexio/design](https://www.npmjs.com/package/@bexio/design) npm package. It is part of a code library for the [Bexio](http://www.bexio.com) company.
 
 ## Development server
 
